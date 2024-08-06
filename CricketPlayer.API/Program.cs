@@ -1,4 +1,7 @@
 
+using CricketPlayer.API.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace CricketPlayer.API
 {
     public class Program
@@ -6,6 +9,14 @@ namespace CricketPlayer.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            #region DataBase
+
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
+            #endregion
 
             // Add services to the container.
 
