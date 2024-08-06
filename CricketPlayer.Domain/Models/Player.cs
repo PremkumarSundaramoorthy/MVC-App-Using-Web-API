@@ -1,9 +1,9 @@
-﻿using CricketPlayer.API.Enums;
+﻿using CricketPlayer.Domain.Enums;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace CricketPlayer.API.Models
+namespace CricketPlayer.Domain.Models
 {
     public class Player
     {

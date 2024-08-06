@@ -1,5 +1,5 @@
 ﻿using CricketPlayer.API.Data;
-using CricketPlayer.API.Models;
+using CricketPlayer.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

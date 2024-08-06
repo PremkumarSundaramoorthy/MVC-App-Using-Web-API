@@ -1,4 +1,4 @@
-﻿namespace CricketPlayer.API.Enums
+﻿namespace CricketPlayer.Domain.Enums
 {
     public enum PlayerRole
     {

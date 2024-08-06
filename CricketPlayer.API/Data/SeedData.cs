@@ -1,5 +1,5 @@
-﻿using CricketPlayer.API.Enums;
-using CricketPlayer.API.Models;
+﻿using CricketPlayer.Domain.Enums;
+using CricketPlayer.Domain.Models;
 
 namespace CricketPlayer.API.Data
 {

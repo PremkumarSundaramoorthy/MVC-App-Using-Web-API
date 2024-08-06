@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\CricketPlayer.Domain\CricketPlayer.Domain.csproj" />
   </ItemGroup>
 
 </Project>

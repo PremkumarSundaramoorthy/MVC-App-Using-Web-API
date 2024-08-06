@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CricketPlayer.API", "CricketPlayer.API\CricketPlayer.API.csproj", "{2E1EA2BF-B209-475F-ABD1-388829317016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CricketPlayer.UI", "CricketPlayer.UI\CricketPlayer.UI.csproj", "{513FF669-2D24-45D5-AC74-E504DCA6411A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CricketPlayer.UI", "CricketPlayer.UI\CricketPlayer.UI.csproj", "{513FF669-2D24-45D5-AC74-E504DCA6411A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CricketPlayer.Domain", "CricketPlayer.Domain\CricketPlayer.Domain.csproj", "{AE318102-6CAE-4C4F-8AAF-3967DEE1F055}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{513FF669-2D24-45D5-AC74-E504DCA6411A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{513FF669-2D24-45D5-AC74-E504DCA6411A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{513FF669-2D24-45D5-AC74-E504DCA6411A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE318102-6CAE-4C4F-8AAF-3967DEE1F055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE318102-6CAE-4C4F-8AAF-3967DEE1F055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE318102-6CAE-4C4F-8AAF-3967DEE1F055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE318102-6CAE-4C4F-8AAF-3967DEE1F055}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

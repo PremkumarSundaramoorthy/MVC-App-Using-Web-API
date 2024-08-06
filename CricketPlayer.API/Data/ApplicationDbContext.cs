@@ -1,4 +1,4 @@
-﻿using CricketPlayer.API.Models;
+﻿using CricketPlayer.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CricketPlayer.API.Data
