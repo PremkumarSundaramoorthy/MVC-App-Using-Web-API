@@ -10,6 +10,6 @@ namespace CricketPlayer.API.Data
             
         }
 
-        DbSet<Player> Player { get; set; }
+       public DbSet<Player> Player { get; set; }
     }
 }

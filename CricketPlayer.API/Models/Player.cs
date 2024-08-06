@@ -39,5 +39,16 @@ namespace CricketPlayer.API.Models
         [Required]
         [Display(Name = "Bowling Style")]
         public BowlingStyle BowlingStyle { get; set; }
+
+        public Player(int rank, string firstName, string lastName, DateTime dateOfBirth, PlayerRole role, BattingStyle battingStyle, BowlingStyle bowlingStyle)
+        {
+            Rank = rank;
+            FirstName = firstName;
+            LastName = lastName;
+            DateOfBirth = dateOfBirth;
+            Role = role;
+            BattingStyle = battingStyle;
+            BowlingStyle = bowlingStyle;
+        }
     }
 }
