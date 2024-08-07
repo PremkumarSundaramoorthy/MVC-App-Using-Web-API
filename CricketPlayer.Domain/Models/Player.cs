@@ -23,8 +23,6 @@ namespace CricketPlayer.Domain.Models
 
         [Required]
         [DisplayFormat(DataFormatString = "{DD.MM.YYYY}")]
-        [Range(typeof(DateTime), "1/1/1984", "1/1/2000",
-        ErrorMessage = "The DOB year must be between 1984 and 2000")]
         [Display(Name = "Date Of Birth")]
         public DateTime DateOfBirth { get; set; }
 
@@ -49,6 +47,11 @@ namespace CricketPlayer.Domain.Models
             Role = role;
             BattingStyle = battingStyle;
             BowlingStyle = bowlingStyle;
+        }
+
+        public Player() 
+        { 
+
         }
     }
 }

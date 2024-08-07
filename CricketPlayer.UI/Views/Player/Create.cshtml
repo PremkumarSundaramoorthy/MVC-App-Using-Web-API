@@ -1,0 +1,75 @@
+﻿@model Player
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h3 class="text-primary">Create Player</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label asp-for="Rank" class="form-label"></label>
+                        <input asp-for="Rank" class="form-control" />
+                        <span asp-validation-for="@Model.Rank" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 col-3">
+                        <label asp-for="FirstName" class="form-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label asp-for="LastName" class="form-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 col-3">
+                        <label asp-for="DateOfBirth" class="form-label"></label>
+                        <input type="date" asp-for="DateOfBirth" class="form-control" />
+                        <span asp-validation-for="@Model.DateOfBirth" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label asp-for="Role" class="form-label"></label>
+                        <select asp-for="Role" asp-items="(IEnumerable<SelectListItem>)@ViewData["PlayerRoleLIst"]"
+                                class="form-select">
+                            <option disabled selected>--Select Plyer Role--</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-3">
+                        <label asp-for="BattingStyle" class="form-label"></label>
+                        <select asp-for="BattingStyle" asp-items="(IEnumerable<SelectListItem>)@ViewData["BattingStyleList"]"
+                                class="form-select">
+                            <option disabled selected>--Batting Style--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label asp-for="BowlingStyle" class="form-label"></label>
+                        <select asp-for="BowlingStyle" asp-items="(IEnumerable<SelectListItem>)@ViewData["BowlingStyleList"]"
+                                class="form-select">
+                            <option disabled selected>--Select Bowling Style--</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-6 text-center">
+                        <a asp-controller="Player" asp-action="Index" class="btn btn-danger">Back</a>
+                        <button type="submit" class="btn btn-success">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

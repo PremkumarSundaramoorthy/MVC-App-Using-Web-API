@@ -12,7 +12,7 @@
             <h2 class="text-secondary text-center">Plyers List</h2>
         </div>
         <div class="col-4 text-end">
-            <a asp-controller="" asp-action="" class="btn btn-info">Create</a>
+            <a asp-controller="Player" asp-action="Create" class="btn btn-info">Create</a>
         </div>
     </div>
     <div class="row">
@@ -38,7 +38,7 @@
                                 <td>@player.Rank</td>
                                 <td>@player.FirstName</td>
                                 <td>@player.LastName</td>
-                                <td>@player.DateOfBirth</td>
+                                <td>@player.DateOfBirth.ToShortDateString()</td>
                                 <td>@player.Role</td>
                                 <td>@player.BattingStyle</td>
                                 <td>@player.BowlingStyle</td>
