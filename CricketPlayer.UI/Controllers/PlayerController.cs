@@ -40,34 +40,7 @@ namespace CricketPlayer.UI.Controllers
         {
             Player player = new Player();
 
-            IEnumerable<SelectListItem> PlayerRoleLIst = Enum.GetValues(typeof(PlayerRole))
-                .Cast<PlayerRole>()
-                .Select(x => new SelectListItem
-                {
-                    Text = x.ToString().ToUpper(),
-                    Value = ((int)x).ToString()
-                });
-
-            IEnumerable<SelectListItem> BattingStyleList = Enum.GetValues(typeof(BattingStyle))
-                .Cast<BattingStyle>()
-                .Select(x => new SelectListItem
-                {
-                    Text = x.ToString().ToUpper(),
-                    Value = ((int)x).ToString()
-                });
-
-            IEnumerable<SelectListItem> BowlingStyleList = Enum.GetValues(typeof(BowlingStyle))
-                .Cast<BowlingStyle>()
-                .Select(x => new SelectListItem
-                {
-                    Text = x.ToString().ToUpper(),
-                    Value = ((int)x).ToString()
-                });
-
-
-            ViewData["PlayerRoleLIst"] = PlayerRoleLIst;
-            ViewData["BattingStyleList"] = BattingStyleList;
-            ViewData["BowlingStyleList"] = BowlingStyleList;
+            SetViewData();
 
             return View(player);
         }
@@ -95,6 +68,8 @@ namespace CricketPlayer.UI.Controllers
             var jsonContent = await response.Content.ReadAsStringAsync();
 
             Player player = JsonConvert.DeserializeObject<Player>(jsonContent);
+
+            SetViewData();
 
             return View(player);
         }
@@ -137,6 +112,38 @@ namespace CricketPlayer.UI.Controllers
             }
 
             return View();
+        }
+
+        private void SetViewData()
+        {
+            IEnumerable<SelectListItem> PlayerRoleLIst = Enum.GetValues(typeof(PlayerRole))
+               .Cast<PlayerRole>()
+               .Select(x => new SelectListItem
+               {
+                   Text = x.ToString().ToUpper(),
+                   Value = ((int)x).ToString()
+               });
+
+            IEnumerable<SelectListItem> BattingStyleList = Enum.GetValues(typeof(BattingStyle))
+                .Cast<BattingStyle>()
+                .Select(x => new SelectListItem
+                {
+                    Text = x.ToString().ToUpper(),
+                    Value = ((int)x).ToString()
+                });
+
+            IEnumerable<SelectListItem> BowlingStyleList = Enum.GetValues(typeof(BowlingStyle))
+                .Cast<BowlingStyle>()
+                .Select(x => new SelectListItem
+                {
+                    Text = x.ToString().ToUpper(),
+                    Value = ((int)x).ToString()
+                });
+
+
+            ViewData["PlayerRoleLIst"] = PlayerRoleLIst;
+            ViewData["BattingStyleList"] = BattingStyleList;
+            ViewData["BowlingStyleList"] = BowlingStyleList;
         }
     }
 }

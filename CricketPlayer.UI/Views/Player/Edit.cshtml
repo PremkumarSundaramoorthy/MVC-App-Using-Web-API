@@ -39,14 +39,14 @@
                         <label asp-for="Role" class="form-label"></label>
                         <select asp-for="Role" asp-items="(IEnumerable<SelectListItem>)@ViewData["PlayerRoleLIst"]"
                                 class="form-select">
-                            <option selected>@Model.Role</option>
+                           
                         </select>
                     </div>
                     <div class="mb-3 col-3">
                         <label asp-for="BattingStyle" class="form-label"></label>
-                        <select asp-for="BattingStyle" asp-items="(IEnumerable<SelectListItem>)@ViewData["BattingStyleList"]"
+                        <select  asp-for="BattingStyle" asp-items="(IEnumerable<SelectListItem>)@ViewData["BattingStyleList"]"
                                 class="form-select">
-                            <option selected>@Model.BattingStyle</option>
+                           
                         </select>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                         <label asp-for="BowlingStyle" class="form-label"></label>
                         <select asp-for="BowlingStyle" asp-items="(IEnumerable<SelectListItem>)@ViewData["BowlingStyleList"]"
                                 class="form-select"  >
-                            <option selected>@Model.BowlingStyle</option>
+                            
                         </select>
                     </div>
                 </div>
