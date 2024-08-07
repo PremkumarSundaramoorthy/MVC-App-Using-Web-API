@@ -113,5 +113,30 @@ namespace CricketPlayer.UI.Controllers
 
             return View(player);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _httpClient.GetAsync($"{BaseUrl}/api/Player/GetById?id={id}");
+
+            var jsonContent = await response.Content.ReadAsStringAsync();
+
+            Player player = JsonConvert.DeserializeObject<Player>(jsonContent);
+
+            return View(player);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeletePlayer(int id)
+        {
+            var response = await _httpClient.DeleteAsync($"{BaseUrl}/api/Player/Delete?id={id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View();
+        }
     }
 }
