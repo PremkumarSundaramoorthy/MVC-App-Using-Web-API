@@ -9,7 +9,7 @@
     <hr />
     <div class="row">
         <div class="col-8">
-            <h2 class="text-secondary text-center">Plyers List</h2>
+            <h2 class="text-secondary text-center">Players List</h2>
         </div>
         <div class="col-4 text-end">
             <a asp-controller="Player" asp-action="Create" class="btn btn-info">Create</a>
@@ -29,6 +29,7 @@
                             <th>Role</th>
                             <th>Batting Style</th>
                             <th>Bowling Style</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,6 +43,12 @@
                                 <td>@player.Role</td>
                                 <td>@player.BattingStyle</td>
                                 <td>@player.BowlingStyle</td>
+                                <td>
+                                    <div>
+                                        <a asp-controller="Player" asp-action="Edit" asp-route-id="@player.Id" class="btn btn-warning">Edit</a>
+                                        <a asp-controller="Player" asp-action="Delete" asp-route-id="@player.Id" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </td>
                             </tr>
                         }
                     </tbody>

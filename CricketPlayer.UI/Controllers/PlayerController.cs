@@ -86,5 +86,32 @@ namespace CricketPlayer.UI.Controllers
 
             return View(player);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var response = await _httpClient.GetAsync($"{BaseUrl}/api/Player/GetById?id={id}");
+
+            var jsonContent = await response.Content.ReadAsStringAsync();
+
+            Player player = JsonConvert.DeserializeObject<Player>(jsonContent);
+
+            return View(player);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Player player)
+        {
+            var content = new StringContent(JsonConvert.SerializeObject(player), Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PutAsync($"{BaseUrl}/api/Player/Update", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(player);
+        }
     }
 }
